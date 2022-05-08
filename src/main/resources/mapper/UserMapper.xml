@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qingge.springboot.mapper.UserMapper">
+
+
+
+    <update id="updatePassword" parameterType="com.qingge.springboot.controller.dto.UserPasswordDTO">
+        update sys_user
+            set password = #{newPassword}
+        where username = #{username}
+            and password = #{password}
+    </update>
+
+    <select id="getUserAsMapById" resultType="com.qingge.springboot.entity.User">
+        select * from user where id =#{id}
+    </select>
+
+
+</mapper>
